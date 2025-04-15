@@ -1,12 +1,13 @@
-# React + Vite
+# Pokémon Memory
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This React project is my implementation of TOP's [Memory Card Project](https://www.theodinproject.com/lessons/react-new-memory-card).
 
-Currently, two official plugins are available:
+The aim was to apply the React concepts learned so far and get a first hands-on practice with React's useEffect Hook.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To see the site live, click [here](https://bellitabellota-memory-card.netlify.app/).
 
-## Expanding the ESLint configuration
+The images are fetched via the Poké API and Netifly was used as deployment provider.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Screenshot
+
+![Memory Card](https://github.com/user-attachments/assets/48cc3555-b428-4e90-97b3-f3f82f2b7975)
