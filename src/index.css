@@ -27,6 +27,7 @@ body {
 #root {
   margin-left: auto;
   margin-right: auto;
+  position: relative;
 }
 
 h1 {
@@ -36,6 +37,12 @@ h1 {
   color: black;
   padding-top: 1.75vw;
   padding-bottom: 1.75vw;
+}
+
+p {
+  color: black;
+  font-size: 1.25rem;
+  line-height: 1.5;
 }
 
 .card-grid {
@@ -62,4 +69,22 @@ h1 {
   width: 100%;;
   object-fit: contain;
   aspect-ratio: 1/1;
+}
+
+.game-info {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -25vw;
+
+  width: 20vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  gap: 20px;
 }
