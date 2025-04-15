@@ -19,10 +19,10 @@ function CardGrid({currentScore, setCurrentScore, bestScore, setBestScore}) {
       setCardsClicked([]);
       setCurrentScore(0);
     } else {
-      setCardsClicked([...cardsClicked, cardsClicked[cardsClicked.length] = clickedSrc]);
+      setCardsClicked([...cardsClicked, clickedSrc]);
       setCurrentScore(currentScore + 1);
     }
-    
+
     setPokemonURLs(shuffleArray(pokemonURLs));
   }
 
