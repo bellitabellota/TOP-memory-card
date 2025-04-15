@@ -22,7 +22,22 @@ function CardGrid({currentScore, setCurrentScore, bestScore, setBestScore}) {
       setCardsClicked([...cardsClicked, cardsClicked[cardsClicked.length] = clickedSrc]);
       incrementCurrentScore(currentScore);
     }
-    //shuffleImages
+    shufflePokemonURLs();
+  }
+
+  const shufflePokemonURLs = () => {
+    const newPokemonURLs = [...pokemonURLs]
+
+    for (let i = newPokemonURLs.length - 1; i > 0; i--) { 
+     
+      const j = Math.floor(Math.random() * (i + 1));
+                    
+      const temp = newPokemonURLs[i];
+      newPokemonURLs[i] = newPokemonURLs[j];
+      newPokemonURLs[j] = temp;
+    }
+
+    setPokemonURLs(newPokemonURLs);
   }
 
   const incrementCurrentScore = (score) => {
