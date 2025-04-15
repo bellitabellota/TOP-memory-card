@@ -8,10 +8,10 @@ function App() {
   return (
     <>
     <h1>Memory Card</h1>
-    <CardGrid />
+    <CardGrid currentScore={currentScore} setCurrentScore={setCurrentScore} bestScore={bestScore} setBestScore={setBestScore}/>
     <GameInfo bestScore={bestScore} currentScore={currentScore} />
     </>
   )
 }
 
-export default App
+export default App;

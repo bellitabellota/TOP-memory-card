@@ -6,8 +6,28 @@ const pokemons = ["ditto", "squirtle", "wartortle", "butterfree",
                   "vileplume", "diglett", "growlithe", "bellsprout",
                   "graveler", "grimer", "hitmonlee", "starmie"];
 
-function CardGrid() {
+function CardGrid({currentScore, setCurrentScore, bestScore, setBestScore}) {
   const [pokemonURLs, setPokemonURLs] = useState([]);
+  const [cardsClicked, setCardsClicked] = useState([]);
+
+  const clickHandler = (e) => {
+    const clickedSrc = e.target.src;
+
+    if(cardsClicked.includes(clickedSrc)) {
+      if(currentScore > bestScore) { setBestScore(currentScore); }
+
+      setCurrentScore(0);
+      setCardsClicked([]);
+    } else {
+      setCardsClicked([...cardsClicked, cardsClicked[cardsClicked.length] = clickedSrc]);
+      incrementCurrentScore(currentScore);
+    }
+    //shuffleImages
+  }
+
+  const incrementCurrentScore = (score) => {
+    setCurrentScore(score + 1);
+  }
 
   useEffect(() => {
     let ignore = false;
@@ -34,7 +54,7 @@ function CardGrid() {
   return(
     <div className="card-grid">
       {pokemonURLs.map((url) => {
-        return <Card url={url} key={url} />;
+        return <Card url={url} key={url} clickHandler={clickHandler}/>;
       })}
     </div>
   )
@@ -42,11 +62,13 @@ function CardGrid() {
 
 export default CardGrid;
 
-function Card({url}) {
+function Card({url, clickHandler}) {
 
   return(
     <div className="card">
-      <img src={url} alt="" />
+      <img src={url} alt="" onClick={(e) => {
+          clickHandler(e);
+        }}/>
     </div>
   )
 }
