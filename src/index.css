@@ -27,7 +27,11 @@ body {
 #root {
   margin-left: auto;
   margin-right: auto;
-  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 h1 {
@@ -35,13 +39,11 @@ h1 {
   line-height: 1.1;
   text-align: center;
   color: black;
-  padding-top: 1.75vw;
-  padding-bottom: 1.75vw;
 }
 
 p {
   color: black;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   line-height: 1.5;
 }
 
@@ -49,7 +51,7 @@ p {
   width: 80vh;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5vw;
+  gap: 0.5vw;
 }
 
 .card {
@@ -71,20 +73,17 @@ p {
   aspect-ratio: 1/1;
 }
 
-.game-info {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: -25vw;
-
-  width: 20vw;
-  height: 100vh;
-
+.scores {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
+}
 
+.game-info {
   text-align: center;
-  gap: 20px;
+}
+
+.game-info > * {
+  margin-top: 0.5vh;
+  margin-bottom: 0.5;
 }

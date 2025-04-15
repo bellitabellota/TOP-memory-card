@@ -8,8 +8,8 @@ function App() {
   return (
     <>
     <h1>Memory Card</h1>
-    <CardGrid currentScore={currentScore} setCurrentScore={setCurrentScore} bestScore={bestScore} setBestScore={setBestScore}/>
     <GameInfo bestScore={bestScore} currentScore={currentScore} />
+    <CardGrid currentScore={currentScore} setCurrentScore={setCurrentScore} bestScore={bestScore} setBestScore={setBestScore}/>
     </>
   )
 }
