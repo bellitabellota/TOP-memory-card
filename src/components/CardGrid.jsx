@@ -16,18 +16,14 @@ function CardGrid({currentScore, setCurrentScore, bestScore, setBestScore}) {
 
     if(cardsClicked.includes(clickedSrc)) {
       if(currentScore > bestScore) { setBestScore(currentScore); }
-
-      setCurrentScore(0);
       setCardsClicked([]);
+      setCurrentScore(0);
     } else {
       setCardsClicked([...cardsClicked, cardsClicked[cardsClicked.length] = clickedSrc]);
-      incrementCurrentScore(currentScore);
+      setCurrentScore(currentScore + 1);
     }
+    
     setPokemonURLs(shuffleArray(pokemonURLs));
-  }
-
-  const incrementCurrentScore = (score) => {
-    setCurrentScore(score + 1);
   }
 
   useEffect(() => {
